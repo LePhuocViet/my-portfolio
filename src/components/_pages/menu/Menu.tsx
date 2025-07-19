@@ -7,7 +7,8 @@ import React, { use, useState } from "react";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
-import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
+import CreateNewFolderOutlinedIcon from "@mui/icons-material/CreateNewFolderOutlined";
+
 const MenuItems = [
   {
     label: "Home",
@@ -27,7 +28,7 @@ const MenuItems = [
   },
   {
     label: "Projects",
-    icon: <CodeOutlinedIcon />,
+    icon: <CreateNewFolderOutlinedIcon />,
     url: "/projects",
   },
 ];
