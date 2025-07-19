@@ -1,10 +1,11 @@
 import { Info } from "@/components/_pages/info/Info";
 import "./globals.css";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { Menu } from "@/components/_pages/menu/Menu";
 import { Footer } from "@/components/_pages/footer/Footer";
 import { HomePage } from "@/components/_pages/home/Home";
-
+import CropRotateOutlinedIcon from "@mui/icons-material/CropRotateOutlined";
+import Technologies from "@/components/_pages/technologies/Technologies";
 export default function Home() {
   return (
     <Box
@@ -63,12 +64,43 @@ export default function Home() {
         <Box
           sx={{
             height: "100%",
-            backgroundColor: "gray",
             borderRadius: 2,
-            boxShadow: 10,
+            display: "flex",
+            flexDirection: "column",
           }}
         >
-          Right
+          <Box
+            sx={{
+              flex: 1.5,
+              backgroundColor: "var(--lpv-core-black-0)",
+              borderRadius: 2,
+              boxShadow: 10,
+              mb: 2,
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <Box sx={{ display: "flex", padding: 2, width: "100%" }}>
+              <CropRotateOutlinedIcon
+                sx={{ color: "var(--lpv-core-white-0)" }}
+              />
+              <Typography
+                sx={{
+                  fontWeight: 700,
+                  fontSize: "1.1rem",
+                  paddingLeft: 1,
+                  color: "var(--lpv-core-white-0)",
+                }}
+              >
+                Skill Set
+              </Typography>
+            </Box>
+            <Box>
+              <Technologies />
+            </Box>
+          </Box>
+          <Box sx={{ flex: 3, backgroundColor: "yellow" }}></Box>
+          <Box sx={{ flex: 1, backgroundColor: "black" }}></Box>
         </Box>
       </Box>
 
