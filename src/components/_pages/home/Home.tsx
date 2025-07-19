@@ -1,16 +1,21 @@
 "use client";
 
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import { Typewriter } from "react-simple-typewriter";
 import EqualizerOutlinedIcon from "@mui/icons-material/EqualizerOutlined";
-import { BoxItem } from "@/components/commons/box-item/BoxItem";
 import CodeOutlinedIcon from "@mui/icons-material/CodeOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import CreateNewFolderOutlinedIcon from "@mui/icons-material/CreateNewFolderOutlined";
 import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
+import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { BoxItem } from "@/components/commons/box-item/BoxItem";
+import { Featured } from "@/components/commons/featured/Featured";
+
 function getFormattedDate(): string {
   const now: Date = new Date();
   const options: Intl.DateTimeFormatOptions = {
@@ -23,6 +28,37 @@ function getFormattedDate(): string {
 }
 
 const Title = ["Welcome to my portfolio.", "Deploy ideas into reality."];
+
+const FeaturedItems = [
+  {
+    title:
+      "Personal Portfolio Showcasing Projects and Skills with Next.js (Personal Project)",
+    image: "/feature/portfolio.jpg",
+    url: "https://myblog.com",
+    time: "Fri, July 18, 2025",
+  },
+  {
+    title:
+      "Invoice Management System for Hoang Long Port Logistics (Enterprise Project)",
+    image: "/feature/hoanglong.jpg",
+    url: "https://myblog.com",
+    time: "Tue, April 1, 2025",
+  },
+  {
+    title:
+      "Language Sharing Forum with AI Integration for Learning Support (Graduation Project)",
+    image: "/feature/forum.jpg",
+    url: "https://myblog.com",
+    time: "Sat, February 1, 2025",
+  },
+  {
+    title:
+      "Experimental Project with NestJS - Under Development (Personal Project)",
+    image: "/feature/Nest.jpg",
+    url: "https://myblog.com",
+    time: "Fri, August 1, 2025",
+  },
+];
 
 const InfoItem = [
   {
@@ -60,6 +96,9 @@ const InfoItem = [
 
 export const HomePage = () => {
   const [date, setDate] = useState(getFormattedDate());
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [checkEnd, setCheckEnd] = useState(false);
+  const [isAtStart, setIsAtStart] = useState(true);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -68,10 +107,26 @@ export const HomePage = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const scroll = (dir: "left" | "right") => {
+    if (scrollRef.current) {
+      const scrollAmount = scrollRef.current.offsetWidth * 0.5;
+      scrollRef.current.scrollBy({
+        left: dir === "left" ? -scrollAmount : scrollAmount,
+        behavior: "smooth",
+      });
+    }
+  };
+  const handleScroll = () => {
+    if (!scrollRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+    setIsAtStart(scrollLeft <= 40);
+
+    setCheckEnd(scrollLeft + clientWidth >= scrollWidth - 1);
+  };
   return (
     <Box
       sx={{
-        minHeight: "110vh",
+        minHeight: "130vh",
         borderRadius: 2,
         display: "flex",
         flexDirection: "column",
@@ -81,18 +136,16 @@ export const HomePage = () => {
       <Box
         sx={{ flex: 6, position: "relative", boxShadow: 10, borderRadius: 10 }}
       >
-        <Box>
-          <Image
-            src="/home/home.jpg"
-            alt="Description"
-            fill
-            style={{
-              objectFit: "cover",
-              objectPosition: "center",
-              borderRadius: 10,
-            }}
-          />
-        </Box>
+        <Image
+          src="/home/home.jpg"
+          alt="Description"
+          fill
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+            borderRadius: 10,
+          }}
+        />
 
         <Box
           sx={{
@@ -158,11 +211,7 @@ export const HomePage = () => {
         }}
       >
         <Box sx={{ display: "flex", padding: 2 }}>
-          <EqualizerOutlinedIcon
-            sx={{
-              color: "var(--lpv-core-white-0)",
-            }}
-          />
+          <EqualizerOutlinedIcon sx={{ color: "var(--lpv-core-white-0)" }} />
           <Typography
             sx={{
               fontWeight: 700,
@@ -198,7 +247,104 @@ export const HomePage = () => {
           ))}
         </Box>
       </Box>
-      <Box sx={{ flex: 4, backgroundColor: "yellow" }}>123</Box>
+
+      <Box
+        sx={{
+          borderRadius: 2,
+          backgroundColor: "var(--lpv-core-black-0)",
+          position: "relative",
+        }}
+      >
+        <Box sx={{ display: "flex", padding: 2 }}>
+          <PushPinOutlinedIcon sx={{ color: "var(--lpv-core-white-0)" }} />
+          <Typography
+            sx={{
+              fontWeight: 700,
+              fontSize: "1.1rem",
+              paddingLeft: 1,
+              color: "var(--lpv-core-white-0)",
+            }}
+          >
+            Featured
+          </Typography>
+        </Box>
+
+        {!isAtStart && (
+          <IconButton
+            onClick={() => scroll("left")}
+            sx={{
+              position: "absolute",
+              top: "50%",
+              left: 8,
+              zIndex: 2,
+              transform: "translateY(-50%)",
+              backgroundColor: "white",
+              borderRadius: "50%",
+              ":hover": {
+                backgroundColor: "#333",
+              },
+            }}
+          >
+            <ChevronLeftIcon />
+          </IconButton>
+        )}
+
+        {!checkEnd && (
+          <IconButton
+            onClick={() => scroll("right")}
+            sx={{
+              position: "absolute",
+              top: "50%",
+              right: 8,
+              zIndex: 2,
+              transform: "translateY(-50%)",
+              backgroundColor: "white",
+              borderRadius: "50%",
+              ":hover": {
+                backgroundColor: "#333",
+              },
+            }}
+          >
+            <ChevronRightIcon />
+          </IconButton>
+        )}
+        <Box
+          ref={scrollRef}
+          onScroll={handleScroll}
+          sx={{
+            display: "flex",
+            overflowX: "auto",
+            ml: 2,
+            scrollSnapType: "x mandatory",
+            scrollBehavior: "smooth",
+            scrollbarWidth: "none",
+            px: 1,
+            pb: 2,
+            gap: 2,
+            "&::-webkit-scrollbar": { display: "none" },
+          }}
+        >
+          {FeaturedItems.map((item, index) => (
+            <Box
+              key={index}
+              sx={{
+                // minWidth: "40%",
+                flexShrink: 0,
+                scrollSnapAlign: "start",
+                alignItems: "center",
+                justifyContent: "center",
+                display: "flex",
+                flex: 1,
+                // m: 2,
+                // pl: index === 0 ? 2 : 0,
+                // pr: index === FeaturedItems.length - 1 ? 2 : 0,
+              }}
+            >
+              <Featured {...item} />
+            </Box>
+          ))}
+        </Box>
+      </Box>
     </Box>
   );
 };
