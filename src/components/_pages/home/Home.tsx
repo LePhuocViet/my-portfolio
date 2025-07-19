@@ -126,7 +126,7 @@ export const HomePage = () => {
   return (
     <Box
       sx={{
-        minHeight: "130vh",
+        minHeight: "110vh",
         borderRadius: 2,
         display: "flex",
         flexDirection: "column",
@@ -134,7 +134,17 @@ export const HomePage = () => {
       }}
     >
       <Box
-        sx={{ flex: 6, position: "relative", boxShadow: 10, borderRadius: 10 }}
+        sx={{
+          // flex: {
+          //   xs: 1,
+          //   md: 1,
+          //   lg: 1,
+          // },
+          minHeight: "45vh",
+          position: "relative",
+          boxShadow: 10,
+          borderRadius: 10,
+        }}
       >
         <Image
           src="/home/home.jpg"
@@ -206,6 +216,7 @@ export const HomePage = () => {
 
       <Box
         sx={{
+          flex: 1,
           backgroundColor: "var(--lpv-core-black-0)",
           borderRadius: 2,
         }}
@@ -250,6 +261,7 @@ export const HomePage = () => {
 
       <Box
         sx={{
+          flex: 1,
           borderRadius: 2,
           backgroundColor: "var(--lpv-core-black-0)",
           position: "relative",
