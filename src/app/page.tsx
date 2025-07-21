@@ -1,11 +1,11 @@
-import { Info } from "@/components/_pages/info/Info";
+import { Info } from "@/components/_pages/nav/info/Info";
 import "./globals.css";
 import { Box, Typography } from "@mui/material";
-import { Menu } from "@/components/_pages/menu/Menu";
-import { Footer } from "@/components/_pages/footer/Footer";
+import { Menu } from "@/components/_pages/nav/menu/Menu";
+import { Footer } from "@/components/_pages/nav/footer/Footer";
 import { HomePage } from "@/components/_pages/home/Home";
-import CropRotateOutlinedIcon from "@mui/icons-material/CropRotateOutlined";
-import Technologies from "@/components/_pages/technologies/Technologies";
+import { MenuHome } from "@/components/_pages/home/page";
+
 export default function Home() {
   return (
     <Box
@@ -50,69 +50,7 @@ export default function Home() {
         </Box>
       </Box>
 
-      <Box
-        sx={{
-          width: "20%",
-          height: "100vh",
-          position: "fixed",
-          right: 0,
-          top: 0,
-          padding: 2,
-          boxSizing: "border-box",
-        }}
-      >
-        <Box
-          sx={{
-            height: "100%",
-            borderRadius: 2,
-            display: "flex",
-            flexDirection: "column",
-          }}
-        >
-          <Box
-            sx={{
-              flex: 1.5,
-              backgroundColor: "var(--lpv-core-black-0)",
-              borderRadius: 2,
-              boxShadow: 10,
-              mb: 2,
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <Box sx={{ display: "flex", padding: 2, width: "100%" }}>
-              <CropRotateOutlinedIcon
-                sx={{ color: "var(--lpv-core-white-0)" }}
-              />
-              <Typography
-                sx={{
-                  fontWeight: 700,
-                  fontSize: "1.1rem",
-                  paddingLeft: 1,
-                  color: "var(--lpv-core-white-0)",
-                }}
-              >
-                Skill Set
-              </Typography>
-            </Box>
-            <Box>
-              <Technologies />
-            </Box>
-          </Box>
-          <Box sx={{ flex: 3, backgroundColor: "yellow" }}></Box>
-          <Box sx={{ flex: 1, backgroundColor: "black" }}></Box>
-        </Box>
-      </Box>
-
-      <Box
-        sx={{
-          width: "100%",
-          pb: 2,
-          borderRadius: 2,
-        }}
-      >
-        <HomePage />
-      </Box>
+      <MenuHome />
     </Box>
   );
 }
