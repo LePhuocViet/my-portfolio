@@ -14,7 +14,6 @@ export const ButtonMenu = ({
   onClick,
   isSelected,
 }: ButtonMenuProps) => {
-  console.log("ButtonMenu rendered", { icon, label, isSelected });
   return (
     <Box
       sx={{

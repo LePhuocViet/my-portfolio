@@ -91,7 +91,9 @@ export default function Technologies() {
               alt={`icon-${idx}`}
               width={40}
               height={40}
-              ref={(el) => (iconRefs.current[idx] = el)}
+              ref={(el) => {
+                iconRefs.current[idx] = el;
+              }}
               style={{
                 transition: "all 0.3s ease",
                 filter:
