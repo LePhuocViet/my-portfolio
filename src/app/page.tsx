@@ -4,7 +4,7 @@ import { Box, Typography } from "@mui/material";
 import { Menu } from "@/components/_pages/nav/menu/Menu";
 import { Footer } from "@/components/_pages/nav/footer/Footer";
 import { HomePage } from "@/components/_pages/home/Home";
-import { MenuHome } from "@/components/_pages/home/page";
+import { MenuHome } from "@/components/_pages/home/menu/MenuHome";
 
 export default function Home() {
   return (
