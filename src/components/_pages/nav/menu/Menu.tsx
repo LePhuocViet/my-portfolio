@@ -1,20 +1,19 @@
 "use client";
 
 import { ButtonMenu } from "@/components/commons/button-menu/ButtonMenu";
-import { Box, Button } from "@mui/material";
-import { url } from "inspector";
-import React, { use, useState } from "react";
+import { Box } from "@mui/material";
+import React from "react";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import CreateNewFolderOutlinedIcon from "@mui/icons-material/CreateNewFolderOutlined";
+import { useRouter, usePathname } from "next/navigation";
 
 const MenuItems = [
   {
     label: "Home",
     icon: <HomeOutlinedIcon />,
     url: "/home",
-    isSelected: true,
   },
   {
     label: "About",
@@ -34,12 +33,13 @@ const MenuItems = [
 ];
 
 export const Menu = () => {
-  const [selectedUrl, setSelectedUrl] = useState("/home");
+  const router = useRouter();
+  const pathname = usePathname(); // Dùng để check selected
 
-  const handlerClickButton = (url: string) => {
-    if (url === selectedUrl) return;
-    setSelectedUrl(url);
-    console.log(`${url} clicked`);
+  const handleClick = (url: string) => {
+    if (url !== pathname) {
+      router.push(url);
+    }
   };
 
   return (
@@ -55,8 +55,8 @@ export const Menu = () => {
           key={index}
           icon={item.icon}
           label={item.label}
-          isSelected={selectedUrl === item.url}
-          onClick={() => handlerClickButton(item.url)}
+          isSelected={pathname === item.url}
+          onClick={() => handleClick(item.url)}
         />
       ))}
     </Box>
