@@ -1,9 +1,8 @@
 import { Info } from "@/components/_pages/nav/info/Info";
 import "./globals.css";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import { Menu } from "@/components/_pages/nav/menu/Menu";
 import { Footer } from "@/components/_pages/nav/footer/Footer";
-import { HomePage } from "@/components/_pages/home/Home";
 import { MenuHome } from "@/components/_pages/home/menu/MenuHome";
 
 export default function Home() {
@@ -12,14 +11,25 @@ export default function Home() {
       sx={{
         width: "100%",
         backgroundColor: "var(--lpv-core-black-1)",
-        paddingX: "20%",
+        paddingX: {
+          xs: "2%",
+          sm: "5%",
+          md: "20%",
+        },
         paddingTop: 2,
         boxSizing: "border-box",
       }}
     >
       <Box
         sx={{
-          width: "20%",
+          width: {
+            xs: "0%",
+            md: "20%",
+          },
+          display: {
+            xs: "none",
+            md: "block",
+          },
           height: "100vh",
           position: "fixed",
           left: 0,

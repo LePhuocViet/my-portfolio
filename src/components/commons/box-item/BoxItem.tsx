@@ -31,10 +31,11 @@ export const BoxItem = ({
     <Box
       sx={{
         backgroundColor: "#444",
-        p: 2,
+        p: { xs: 1.5, md: 2 },
         borderRadius: 2,
         flex: 1,
-        m: 1,
+        m: { xs: 0.5, md: 1 },
+        minWidth: { xs: "45%", sm: "auto" },
         transition: "all 0.3s ease",
 
         ":hover": {
@@ -44,16 +45,24 @@ export const BoxItem = ({
         },
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          flexDirection: { xs: "column", sm: "row" },
+          textAlign: { xs: "center", sm: "left" },
+        }}
+      >
         <Box
           sx={{
-            p: 2,
+            p: { xs: 1.5, md: 2 },
             alignItems: "center",
             justifyContent: "center",
             display: "flex",
             backgroundColor: color || "var(--lpv-core-black-2)",
             borderRadius: 4,
-            mr: 1,
+            mr: { xs: 0, sm: 1 },
+            mb: { xs: 1, sm: 0 },
           }}
         >
           {icon}
@@ -63,7 +72,7 @@ export const BoxItem = ({
             sx={{
               color: "var(--lpv-core-white-0)",
               fontWeight: 700,
-              fontSize: "1.1rem",
+              fontSize: { xs: "0.9rem", md: "1.1rem" },
             }}
           >
             {!shouldStart ? (
@@ -84,12 +93,23 @@ export const BoxItem = ({
       </Box>
       <Box
         sx={{
-          mt: 2,
-
+          mt: { xs: 1, md: 2 },
           color: "var(--lpv-core-white-0)",
         }}
       >
-        <Typography sx={{ fontWeight: 700 }}>{title}</Typography>
+        <Typography
+          sx={{
+            fontWeight: 700,
+            fontSize: { xs: "0.85rem", md: "1rem" },
+            display: {
+              xs: "flex",
+              sm: "block",
+            },
+            justifyContent: "center",
+          }}
+        >
+          {title}
+        </Typography>
       </Box>
     </Box>
   );

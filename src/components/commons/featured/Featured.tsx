@@ -14,23 +14,25 @@ export const Featured = ({ image, url, title, time }: FeaturedProps) => {
   return (
     <Box
       sx={{
-        // display: "flex",
+        width: "100%",
         ":hover": {
           cursor: "pointer",
         },
       }}
     >
-      <Box sx={{}}>
+      <Box sx={{ 
+        width: "100%",
+        position: "relative",
+        aspectRatio: "3/2",
+      }}>
         <Image
           src={image}
           alt="Description"
-          width={300}
-          height={200}
+          fill
           style={{
             borderRadius: 10,
-            // objectFit: "cover",
-            // objectPosition: "center",
-            // borderRadius: 10,
+            objectFit: "cover",
+            objectPosition: "center",
           }}
         />
       </Box>
@@ -42,8 +44,9 @@ export const Featured = ({ image, url, title, time }: FeaturedProps) => {
         <Typography
           sx={{
             fontWeight: 400,
-            fontSize: "0.9rem",
+            fontSize: { xs: "0.8rem", md: "0.9rem" },
             color: "var(--lpv-core-white-0)",
+            lineHeight: 1.4,
           }}
         >
           {title}
@@ -68,7 +71,7 @@ export const Featured = ({ image, url, title, time }: FeaturedProps) => {
         <Typography
           sx={{
             fontWeight: 400,
-            fontSize: "0.8rem",
+            fontSize: { xs: "0.75rem", md: "0.8rem" },
             color: "var(--lpv-core-white-0)",
             opacity: 0.7,
           }}

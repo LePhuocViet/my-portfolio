@@ -163,19 +163,19 @@ export const HomePage = () => {
             color: "var(--lpv-core-white-0)",
             alignItems: "center",
             justifyContent: "center",
-            pt: 3,
-            pl: 3,
+            pt: { xs: 2, md: 3 },
+            pl: { xs: 2, md: 3 },
             display: "flex",
           }}
         >
-          <CalendarMonthIcon sx={{ fontSize: "1.2rem" }} />
+          <CalendarMonthIcon sx={{ fontSize: { xs: "1rem", md: "1.2rem" } }} />
           <Box
             sx={{
-              pl: 2,
+              pl: { xs: 1, md: 2 },
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "1rem",
+              fontSize: { xs: "0.85rem", md: "1rem" },
               fontWeight: 500,
             }}
           >
@@ -189,16 +189,21 @@ export const HomePage = () => {
             color: "var(--lpv-core-white-0)",
             alignItems: "center",
             justifyContent: "center",
-            bottom: 24,
-            left: 24,
+            bottom: { xs: 16, md: 24 },
+            left: { xs: 16, md: 24 },
             display: "flex",
           }}
         >
           <Typography
             sx={{
               fontWeight: 700,
-              fontSize: "2.5rem",
+              fontSize: { 
+                xs: "1.2rem", 
+                sm: "1.8rem", 
+                md: "2.5rem" 
+              },
               fontFamily: "monospace",
+              textAlign: { xs: "left", md: "left" },
             }}
           >
             <Typewriter
@@ -238,11 +243,16 @@ export const HomePage = () => {
           sx={{
             width: "100%",
             display: "flex",
+            flexDirection: {
+              xs: "column",
+              sm: "row",
+            },
             alignItems: "center",
             justifyContent: "center",
             pl: 2,
             pr: 2,
             pb: 2,
+            gap: { xs: 1, sm: 0 },
           }}
         >
           {InfoItem.map((item, index) => (
@@ -287,17 +297,19 @@ export const HomePage = () => {
             sx={{
               position: "absolute",
               top: "50%",
-              left: 8,
+              left: { xs: 4, md: 8 },
               zIndex: 2,
               transform: "translateY(-50%)",
               backgroundColor: "white",
               borderRadius: "50%",
+              width: { xs: 32, md: 40 },
+              height: { xs: 32, md: 40 },
               ":hover": {
                 backgroundColor: "#333",
               },
             }}
           >
-            <ChevronLeftIcon />
+            <ChevronLeftIcon sx={{ fontSize: { xs: "1rem", md: "1.5rem" } }} />
           </IconButton>
         )}
 
@@ -307,17 +319,19 @@ export const HomePage = () => {
             sx={{
               position: "absolute",
               top: "50%",
-              right: 8,
+              right: { xs: 4, md: 8 },
               zIndex: 2,
               transform: "translateY(-50%)",
               backgroundColor: "white",
               borderRadius: "50%",
+              width: { xs: 32, md: 40 },
+              height: { xs: 32, md: 40 },
               ":hover": {
                 backgroundColor: "#333",
               },
             }}
           >
-            <ChevronRightIcon />
+            <ChevronRightIcon sx={{ fontSize: { xs: "1rem", md: "1.5rem" } }} />
           </IconButton>
         )}
         <Box
@@ -326,13 +340,13 @@ export const HomePage = () => {
           sx={{
             display: "flex",
             overflowX: "auto",
-            ml: 2,
+            ml: { xs: 1, md: 2 },
             scrollSnapType: "x mandatory",
             scrollBehavior: "smooth",
             scrollbarWidth: "none",
             px: 1,
             pb: 2,
-            gap: 2,
+            gap: { xs: 1, md: 2 },
             "&::-webkit-scrollbar": { display: "none" },
           }}
         >
@@ -340,16 +354,17 @@ export const HomePage = () => {
             <Box
               key={index}
               sx={{
-                // minWidth: "40%",
+                minWidth: {
+                  xs: "85%",
+                  sm: "45%",
+                  md: "40%",
+                },
                 flexShrink: 0,
                 scrollSnapAlign: "start",
                 alignItems: "center",
                 justifyContent: "center",
                 display: "flex",
-                flex: 1,
-                // m: 2,
-                // pl: index === 0 ? 2 : 0,
-                // pr: index === FeaturedItems.length - 1 ? 2 : 0,
+                flex: { xs: "none", md: 1 },
               }}
             >
               <Featured {...item} />
