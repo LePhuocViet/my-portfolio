@@ -5,26 +5,29 @@ import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Box } from "@mui/material";
+import { useRouter } from "next/navigation";
 
 const HomeFooterList = [
   {
     title: "Facebook",
-    url: "https://www.facebook.com/yourprofile",
+    url: "https://www.facebook.com/vietyts",
     icon: <FacebookOutlinedIcon />,
   },
   {
     title: "Email",
-    url: "mailto:youremail@example.com",
+    url: "mailto:lephuocviet0402@gmail.com",
     icon: <EmailIcon />,
   },
   {
     title: "GitHub",
-    url: "https://github.com/yourprofile",
+    url: "https://github.com/LePhuocViet",
     icon: <GitHubIcon />,
   },
 ];
 
 export const HomeFooter = () => {
+  const router = useRouter();
+
   return (
     <Box
       sx={{
@@ -34,6 +37,7 @@ export const HomeFooter = () => {
     >
       {HomeFooterList.map((item, index) => (
         <Box
+          onClick={() => window.open(item.url ?? "/", "_blank")}
           key={index}
           sx={{
             display: "flex",

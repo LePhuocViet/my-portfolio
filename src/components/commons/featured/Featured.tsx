@@ -1,7 +1,10 @@
+"use client";
+
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import { useRouter } from "next/navigation";
 
 interface FeaturedProps {
   image: string;
@@ -11,8 +14,10 @@ interface FeaturedProps {
 }
 
 export const Featured = ({ image, url, title, time }: FeaturedProps) => {
+  const router = useRouter();
   return (
     <Box
+      onClick={() => window.open(url ?? "/", "_blank")}
       sx={{
         width: "100%",
         ":hover": {
@@ -20,11 +25,13 @@ export const Featured = ({ image, url, title, time }: FeaturedProps) => {
         },
       }}
     >
-      <Box sx={{ 
-        width: "100%",
-        position: "relative",
-        aspectRatio: "3/2",
-      }}>
+      <Box
+        sx={{
+          width: "100%",
+          position: "relative",
+          aspectRatio: "3/2",
+        }}
+      >
         <Image
           src={image}
           alt="Description"
@@ -47,6 +54,11 @@ export const Featured = ({ image, url, title, time }: FeaturedProps) => {
             fontSize: { xs: "0.8rem", md: "0.9rem" },
             color: "var(--lpv-core-white-0)",
             lineHeight: 1.4,
+            display: "-webkit-box",
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: "vertical",
+            overflow: "hidden",
+            textOverflow: "ellipsis",
           }}
         >
           {title}

@@ -142,7 +142,6 @@ export const MenuHome = () => {
         <HomePage />
       </Box>
 
-      {/* Mobile Experience Section */}
       <Box
         sx={{
           display: { xs: "block", md: "none" },
