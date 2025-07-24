@@ -49,7 +49,10 @@ export const AboutInfo = () => {
         >
           <Box
             sx={{
-              paddingLeft: "25%",
+              paddingLeft: {
+                md: "130px",
+                xs: "130px",
+              },
               mt: "10px",
             }}
           >

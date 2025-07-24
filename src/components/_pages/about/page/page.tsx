@@ -39,19 +39,30 @@ export const AboutPage = () => {
   return (
     <Box
       sx={{
-        width: "calc(100% + 31.3%)",
-        height: "195vh",
+        width: {
+          xs: "100%",
+          md: "calc(100% + 31.3%)",
+        },
+        height: {
+          xs: "auto",
+          md: "195vh",
+        },
         display: "flex",
+        flexDirection: {
+          xs: "column",
+          md: "row",
+        },
         boxSizing: "border-box",
-        overflow: "hidden",
+        overflow: { xs: "visible", md: "hidden" },
+        gap: { xs: 2, md: 0 },
       }}
     >
       <Box
         sx={{
           flex: 1,
-          mr: 1,
+          mr: { xs: 0, md: 1 },
           width: "100%",
-          height: "100%",
+          height: { xs: "auto", md: "100%" },
           display: "flex",
           flexDirection: "column",
           gap: 2,
@@ -59,7 +70,7 @@ export const AboutPage = () => {
       >
         <Box
           sx={{
-            height: "38vh",
+            height: { xs: "30vh", md: "38vh" },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
           }}
@@ -78,10 +89,12 @@ export const AboutPage = () => {
 
         <Box
           sx={{
-            flex: 1,
+            flex: { xs: "none", md: 1 },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
             position: "relative",
+            minHeight: { xs: "35vh", md: "auto" },
+            mb: { xs: 2, md: 0 },
           }}
         >
           <Title text="Featured" icon={<PushPinOutlinedIcon />} />
@@ -155,7 +168,7 @@ export const AboutPage = () => {
                 sx={{
                   minWidth: {
                     xs: "85%",
-                    sm: "67.79%",
+                    sm: "45%",
                     md: "62.79%",
                   },
                   flexShrink: 0,
@@ -173,10 +186,11 @@ export const AboutPage = () => {
         </Box>
         <Box
           sx={{
-            flex: 2,
+            flex: { xs: "none", md: 2 },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
-            mb: 2,
+            mb: { xs: 2, md: 2 },
+            minHeight: { xs: "40vh", md: "auto" },
           }}
         >
           <Title text="Projects Experience" icon={<FolderOpenIcon />} />
@@ -186,20 +200,22 @@ export const AboutPage = () => {
 
       <Box
         sx={{
-          flex: 1,
-          height: "80vh",
+          flex: { xs: "none", md: 1 },
+          height: { xs: "auto", md: "75vh" },
           width: "100%",
-          display: "flex",
+          display: { xs: "block", md: "flex" },
           flexDirection: "column",
           gap: 2,
         }}
       >
         <Box
           sx={{
-            flex: 1,
+            flex: { xs: "none", md: 1 },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
             pb: 2,
+            mb: { xs: 2, md: 0 },
+            minHeight: { xs: "25vh", md: "auto" },
           }}
         >
           <Title text="Education" icon={<SchoolOutlinedIcon />} />
@@ -207,9 +223,10 @@ export const AboutPage = () => {
         </Box>
         <Box
           sx={{
-            flex: 2,
+            flex: { xs: "none", md: 2 },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
+            minHeight: { xs: "30vh", md: "auto" },
           }}
         >
           <Title text="Experience" icon={<ApartmentOutlinedIcon />} />

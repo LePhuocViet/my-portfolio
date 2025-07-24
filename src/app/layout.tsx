@@ -4,6 +4,7 @@
 import { Info } from "@/components/_pages/nav/info/Info";
 import { Footer } from "@/components/_pages/nav/footer/Footer";
 import { Menu } from "@/components/_pages/nav/menu/Menu";
+import { MobileNav } from "@/components/_pages/nav/mobile-nav/MobileNav";
 import { Box } from "@mui/material";
 import "./globals.css";
 
@@ -15,6 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        {/* Mobile Navigation */}
+        <MobileNav />
+
         <Box
           sx={{
             width: "100%",
@@ -24,8 +28,12 @@ export default function RootLayout({
               sm: "5%",
               md: "20%",
             },
-            paddingTop: 2,
+            paddingTop: {
+              xs: "70px", // Space for mobile nav
+              md: 2,
+            },
             boxSizing: "border-box",
+            minHeight: "100vh",
           }}
         >
           <Box
