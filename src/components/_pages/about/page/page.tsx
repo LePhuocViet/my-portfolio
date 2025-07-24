@@ -11,6 +11,11 @@ import { FeaturedItems } from "../../home/page/Home";
 import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import { AboutTitle } from "../about-title/AboutTitle";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
+import { Project } from "../project/Project";
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import { Education } from "../school/Education";
+import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
+
 export const AboutPage = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [checkEnd, setCheckEnd] = useState(false);
@@ -36,7 +41,7 @@ export const AboutPage = () => {
     <Box
       sx={{
         width: "calc(100% + 31.3%)",
-        height: "200vh",
+        height: "195vh",
         display: "flex",
         boxSizing: "border-box",
         overflow: "hidden",
@@ -172,16 +177,19 @@ export const AboutPage = () => {
             flex: 2,
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
+            mb: 2,
           }}
         >
           <Title text="Projects Experience" icon={<FolderOpenIcon />} />
+          <Project />
+
         </Box>
       </Box>
 
       <Box
         sx={{
           flex: 1,
-          height: "90vh",
+          height: "80vh",
           width: "100%",
           display: "flex",
           flexDirection: "column",
@@ -193,15 +201,22 @@ export const AboutPage = () => {
             flex: 1,
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
+            pb: 2,
           }}
-        ></Box>
+        >
+          <Title text="Education" icon={<SchoolOutlinedIcon />} />
+          <Education />
+        </Box>
         <Box
           sx={{
-            flex: 1,
+            flex: 2,
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
           }}
-        ></Box>
+        >
+          <Title text="Experience" icon={<ApartmentOutlinedIcon />} />
+        </Box>
+
       </Box>
     </Box>
   );
