@@ -15,6 +15,7 @@ import { Project } from "../project/Project";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 import { Education } from "../school/Education";
 import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
+
 export const AboutPage = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [checkEnd, setCheckEnd] = useState(false);
@@ -181,6 +182,7 @@ export const AboutPage = () => {
         >
           <Title text="Projects Experience" icon={<FolderOpenIcon />} />
           <Project />
+
         </Box>
       </Box>
 
@@ -214,6 +216,7 @@ export const AboutPage = () => {
         >
           <Title text="Experience" icon={<ApartmentOutlinedIcon />} />
         </Box>
+
       </Box>
     </Box>
   );
