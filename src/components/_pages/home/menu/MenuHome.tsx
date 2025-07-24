@@ -9,7 +9,11 @@ import { HomeFooter } from "../footer/HomeFooter";
 import MailOutlineOutlinedIcon from "@mui/icons-material/MailOutlineOutlined";
 export const MenuHome = () => {
   return (
-    <Box>
+    <Box
+      sx={{
+        paddingTop: { xs: 1, md: 0 }, // Extra padding for mobile nav
+      }}
+    >
       <Box
         sx={{
           width: {
@@ -142,7 +146,6 @@ export const MenuHome = () => {
         <HomePage />
       </Box>
 
-      {/* Mobile Experience Section */}
       <Box
         sx={{
           display: { xs: "block", md: "none" },

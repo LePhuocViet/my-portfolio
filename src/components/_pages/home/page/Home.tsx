@@ -29,33 +29,33 @@ function getFormattedDate(): string {
 
 const Title = ["Welcome to my portfolio.", "Deploy ideas into reality."];
 
-const FeaturedItems = [
+export const FeaturedItems = [
   {
     title:
       "Personal Portfolio Showcasing Projects and Skills with Next.js (Personal Project)",
     image: "/feature/portfolio.jpg",
-    url: "https://myblog.com",
+    url: "https://github.com/LePhuocViet/my-portfolio",
     time: "Fri, July 18, 2025",
   },
   {
     title:
       "Invoice Management System for Hoang Long Port Logistics (Enterprise Project)",
     image: "/feature/hoanglong.jpg",
-    url: "https://myblog.com",
+    url: "https://hoanglonglti.id.vn/login.html",
     time: "Tue, April 1, 2025",
   },
   {
     title:
       "Language Sharing Forum with AI Integration for Learning Support (Graduation Project)",
     image: "/feature/forum.jpg",
-    url: "https://myblog.com",
+    url: "https://github.com/LePhuocViet/Forum-Api",
     time: "Sat, February 1, 2025",
   },
   {
     title:
       "Experimental Project with NestJS - Under Development (Personal Project)",
     image: "/feature/Nest.jpg",
-    url: "https://myblog.com",
+    url: "",
     time: "Fri, August 1, 2025",
   },
 ];
@@ -197,10 +197,10 @@ export const HomePage = () => {
           <Typography
             sx={{
               fontWeight: 700,
-              fontSize: { 
-                xs: "1.2rem", 
-                sm: "1.8rem", 
-                md: "2.5rem" 
+              fontSize: {
+                xs: "1.2rem",
+                sm: "1.8rem",
+                md: "2.5rem",
               },
               fontFamily: "monospace",
               textAlign: { xs: "left", md: "left" },

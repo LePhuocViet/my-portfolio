@@ -1,66 +1,14 @@
-import { Info } from "@/components/_pages/nav/info/Info";
-import "./globals.css";
-import { Box } from "@mui/material";
-import { Menu } from "@/components/_pages/nav/menu/Menu";
-import { Footer } from "@/components/_pages/nav/footer/Footer";
-import { MenuHome } from "@/components/_pages/home/menu/MenuHome";
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
-  return (
-    <Box
-      sx={{
-        width: "100%",
-        backgroundColor: "var(--lpv-core-black-1)",
-        paddingX: {
-          xs: "2%",
-          sm: "5%",
-          md: "20%",
-        },
-        paddingTop: 2,
-        boxSizing: "border-box",
-      }}
-    >
-      <Box
-        sx={{
-          width: {
-            xs: "0%",
-            md: "20%",
-          },
-          display: {
-            xs: "none",
-            md: "block",
-          },
-          height: "100vh",
-          position: "fixed",
-          left: 0,
-          top: 0,
-          padding: 2,
-          boxSizing: "border-box",
-        }}
-      >
-        <Box
-          sx={{
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            boxShadow: 10,
-            borderRadius: 2,
-            backgroundColor: "#1e1e1e",
-          }}
-        >
-          <Box sx={{ flex: 1 }}>
-            <Info />
-          </Box>
-          <Box sx={{ flex: 3 }}>
-            <Menu />
-          </Box>
-          <Box sx={{ flex: 1 }}>
-            <Footer />
-          </Box>
-        </Box>
-      </Box>
+  const router = useRouter();
 
-      <MenuHome />
-    </Box>
-  );
+  useEffect(() => {
+    router.push("/home");
+  }, [router]);
+
+  return null;
 }
