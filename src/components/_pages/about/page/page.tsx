@@ -13,9 +13,8 @@ import { AboutTitle } from "../about-title/AboutTitle";
 import FolderOpenIcon from "@mui/icons-material/FolderOpen";
 import { Project } from "../project/Project";
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
-import { Education } from "../school/Education";
 import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
-
+import { ItemExperience } from "@/components/commons/item-experience/Education";
 export const AboutPage = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [checkEnd, setCheckEnd] = useState(false);
@@ -187,23 +186,21 @@ export const AboutPage = () => {
         </Box>
         <Box
           sx={{
-            flex: { xs: "none", md: 2 },
+            flex: { xs: 2, md: 1 },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
-            mb: { xs: 2, md: 2 },
-            minHeight: { xs: "40vh", md: "auto" },
+            pb: 2,
           }}
         >
           <Title text="Projects Experience" icon={<FolderOpenIcon />} />
           <Project />
-
         </Box>
       </Box>
 
       <Box
         sx={{
           flex: { xs: "none", md: 1 },
-          height: { xs: "auto", md: "75vh" },
+          height: { xs: "auto", md: "55vh" },
           width: "100%",
           display: { xs: "block", md: "flex" },
           flexDirection: "column",
@@ -221,19 +218,30 @@ export const AboutPage = () => {
           }}
         >
           <Title text="Education" icon={<SchoolOutlinedIcon />} />
-          <Education />
+          <ItemExperience
+            title="Duy Tan University"
+            description="Information Technology"
+            date="2021 - 2025"
+            imageSrc="/dtu/dtu.png"
+            moreInfo="GPA: 3.71"
+          />
         </Box>
         <Box
           sx={{
-            flex: { xs: "none", md: 2 },
+            flex: { xs: "none", md: 1 },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
             minHeight: { xs: "30vh", md: "auto" },
           }}
         >
           <Title text="Experience" icon={<ApartmentOutlinedIcon />} />
+          <ItemExperience
+            title="HifivePlus Technology JSC"
+            description="FullStack Developer"
+            date="12/2024 - Present"
+            imageSrc="/hifive/hifive.png"
+          />
         </Box>
-
       </Box>
     </Box>
   );
