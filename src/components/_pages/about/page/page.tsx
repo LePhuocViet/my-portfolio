@@ -45,7 +45,7 @@ export const AboutPage = () => {
         },
         height: {
           xs: "auto",
-          md: "195vh",
+          md: "190vh",
         },
         display: "flex",
         flexDirection: {
@@ -186,10 +186,10 @@ export const AboutPage = () => {
         </Box>
         <Box
           sx={{
-            flex: { xs: 2, md: 1 },
+            flex: { xs: 2, md: 2 },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
-            pb: 2,
+            pb: 1,
           }}
         >
           <Title text="Projects Experience" icon={<FolderOpenIcon />} />
