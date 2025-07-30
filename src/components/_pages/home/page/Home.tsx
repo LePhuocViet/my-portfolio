@@ -287,7 +287,7 @@ export const HomePage = () => {
               color: "var(--lpv-core-white-0)",
             }}
           >
-            Featured
+            Personal Project
           </Typography>
         </Box>
 

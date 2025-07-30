@@ -12,7 +12,7 @@ export const AboutTitle = () => {
       <Typography
         sx={{
           color: "var(--lpv-core-white-0)",
-          fontSize: "0.8rem",
+          fontSize: "0.9rem",
         }}
       >
         Aspiring to become a professional full-stack developer with a strong

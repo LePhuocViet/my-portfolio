@@ -47,17 +47,23 @@ export const Info = () => {
           alignItems: "center",
         }}
       >
-        <Button
-          variant="outlined"
-          sx={{
-            width: "100%",
-            color: "var(--lpv-core-white-0)",
-            textTransform: "none",
-            border: "0.5px solid var(--lpv-core-white-0)",
-          }}
+        <a
+          href="https://www.topcv.vn/download-cv?cv_id=VwUBVVZQDFxUDlQDUVRaB1IMAgICAgRWUVEEVwd93f&download_source=topcv_web&dontcount=1"
+          download
+          style={{ width: "100%", textDecoration: "none" }}
         >
-          Resume
-        </Button>
+          <Button
+            variant="outlined"
+            sx={{
+              width: "100%",
+              color: "var(--lpv-core-white-0)",
+              textTransform: "none",
+              border: "0.5px solid var(--lpv-core-white-0)",
+            }}
+          >
+            Download CV
+          </Button>
+        </a>
       </Box>
     </Box>
   );

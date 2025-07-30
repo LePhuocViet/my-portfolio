@@ -34,7 +34,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.9rem",
+            fontSize: "1rem",
             fontWeight: 500,
           }}
         >
@@ -43,7 +43,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.9rem",
+            fontSize: "1rem",
             fontWeight: 500,
             fontStyle: "italic",
           }}
@@ -59,7 +59,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 400,
           }}
         >
@@ -74,7 +74,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 400,
           }}
         >
@@ -89,7 +89,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 400,
           }}
         >
@@ -104,7 +104,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 400,
           }}
         >
@@ -119,7 +119,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 400,
           }}
         >
@@ -135,7 +135,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 400,
           }}
         >
@@ -144,7 +144,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 400,
           }}
         >
@@ -159,7 +159,7 @@ export const ProjectItem = ({
         <Typography
           sx={{
             color: "var(--lpv-core-white-0)",
-            fontSize: "0.8rem",
+            fontSize: "0.9rem",
             fontWeight: 400,
           }}
         >
@@ -177,7 +177,7 @@ export const ProjectItem = ({
             key={index}
             sx={{
               color: "var(--lpv-core-white-0)",
-              fontSize: "0.8rem",
+              fontSize: "0.9rem",
               fontWeight: 400,
             }}
           >
