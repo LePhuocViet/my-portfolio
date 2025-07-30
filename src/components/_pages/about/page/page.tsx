@@ -45,8 +45,9 @@ export const AboutPage = () => {
         },
         height: {
           xs: "auto",
-          md: "190vh",
+          md: "auto",
         },
+        pb: 2,
         display: "flex",
         flexDirection: {
           xs: "column",
@@ -97,7 +98,7 @@ export const AboutPage = () => {
             mb: { xs: 2, md: 0 },
           }}
         >
-          <Title text="Featured" icon={<PushPinOutlinedIcon />} />
+          <Title text="Personal Project" icon={<PushPinOutlinedIcon />} />
 
           {!isAtStart && (
             <IconButton
@@ -186,7 +187,7 @@ export const AboutPage = () => {
         </Box>
         <Box
           sx={{
-            flex: { xs: 2, md: 2 },
+            flex: { xs: 2, md: 1 },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
             pb: 1,
@@ -200,7 +201,7 @@ export const AboutPage = () => {
       <Box
         sx={{
           flex: { xs: "none", md: 1 },
-          height: { xs: "auto", md: "55vh" },
+          height: { xs: "auto", md: "45vh" },
           width: "100%",
           display: { xs: "block", md: "flex" },
           flexDirection: "column",
@@ -214,7 +215,6 @@ export const AboutPage = () => {
             borderRadius: 2,
             pb: 2,
             mb: { xs: 2, md: 0 },
-            minHeight: { xs: "25vh", md: "auto" },
           }}
         >
           <Title text="Education" icon={<SchoolOutlinedIcon />} />
@@ -231,7 +231,7 @@ export const AboutPage = () => {
             flex: { xs: "none", md: 1 },
             backgroundColor: "var(--lpv-core-black-0)",
             borderRadius: 2,
-            minHeight: { xs: "30vh", md: "auto" },
+            pb: 2,
           }}
         >
           <Title text="Experience" icon={<ApartmentOutlinedIcon />} />

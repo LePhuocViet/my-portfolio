@@ -20,22 +20,21 @@ const MenuItems = [
     icon: <PersonOutlineOutlinedIcon />,
     url: "/about",
   },
-  {
-    label: "Experience",
-    icon: <WorkOutlineOutlinedIcon />,
-    url: "/experience",
-  },
-  {
-    label: "Projects",
-    icon: <CreateNewFolderOutlinedIcon />,
-    url: "/projects",
-  },
+  // {
+  //   label: "Experience",
+  //   icon: <WorkOutlineOutlinedIcon />,
+  //   url: "/experience",
+  // },
+  // {
+  //   label: "Projects",
+  //   icon: <CreateNewFolderOutlinedIcon />,
+  //   url: "/projects",
+  // },
 ];
 
 export const Menu = () => {
   const router = useRouter();
-  const pathname = usePathname(); // Dùng để check selected
-
+  const pathname = usePathname();
   const handleClick = (url: string) => {
     if (url !== pathname) {
       router.push(url);
