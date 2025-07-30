@@ -19,16 +19,16 @@ const MenuItems = [
     icon: <PersonOutlineOutlinedIcon />,
     url: "/about",
   },
-  {
-    label: "Experience",
-    icon: <WorkOutlineOutlinedIcon />,
-    url: "/experience",
-  },
-  {
-    label: "Projects",
-    icon: <CreateNewFolderOutlinedIcon />,
-    url: "/projects",
-  },
+  // {
+  //   label: "Experience",
+  //   icon: <WorkOutlineOutlinedIcon />,
+  //   url: "/experience",
+  // },
+  // {
+  //   label: "Projects",
+  //   icon: <CreateNewFolderOutlinedIcon />,
+  //   url: "/projects",
+  // },
 ];
 
 export const MobileNav = () => {
